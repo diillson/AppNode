@@ -17,9 +17,9 @@ AppNode
 │   └── SSL<br/>
 └── startProject.sh<br/>
 
-todo o ambiente foi projetado em Linux/Debian<br/>
-porém como é utilizado como base no Docker,<br/>
-toda sua estrutura funcionará perfeitamente no windows;<br/>
+todo o ambiente foi projetado em Linux<br/>
+porém como é utilizaremos o Docker para deploy,<br/>
+toda sua estrutura funcionará perfeitamente no windows/Linux/mac;<br/>
 <br/>
 Aplicações necessárias:<br/>
 <br/>
