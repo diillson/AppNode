@@ -46,7 +46,7 @@ observando que não havia a chamada do dotenv,
 foi adicionado ao inicio do código para o funcionamento correto.<br/>
 
 **Diretórios/arquivos:**<br/>
-foi criado um diretório ** /app ** organizando os docs referente a aplicação/servidor NODE.js,<br/>
+foi criado um diretório /app organizando os docs referente a aplicação/servidor NODE.js,<br/>
 no diretório terá seu dockerfile, server.js e package.json contendo a instalação das dependências para funcionamento do node.js<br />
 e dotenv a partir do npm, expondo a porta 8080 para funcionamento do servidor NODE.js.<br/>
 <br/>
@@ -85,19 +85,19 @@ após as verificação ira iniciar todo ambiente em docker, ao fim disponibiliza
 <br/>
 
 ##### INICIANDO MANUALMENTE 
-para inciar o Ambiente manualmente com ``` docker-compose up ``` em Linux/Windows/Mac:<br />
+para inciar o Ambiente manualmente com ``` $ docker-compose up ``` em Linux/Windows/Mac:<br />
 recomendado remover qualquer versão das seguintes imagens em seu docker:<br/>
 ```
 ngix , mysql:5.7, node:10
 
 -- Evitando qualquer conflito, para isso utilize:
-docker image rm nginx:latest mysql:5.7 node:10
+$ docker image rm nginx:latest mysql:5.7 node:10
 ```
 <br />
 após a verificação e limpeza das imagens, iniciar todo o build e deploy com:
 
 ```
-docker-compose up 
+$ docker-compose up 
 
 ```
 <br />
