@@ -1,5 +1,5 @@
 ##Link da API
-NODE_API="http://localhost"
+NODE_API='localhost'
 ## escolha do ID a manipular
 NOTE_ID="1"
 
