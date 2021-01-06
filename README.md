@@ -64,7 +64,7 @@ em primeiro faço que o container MySQL inicie, preparando o banco junto de suas
 em segundo com uma dependecia do MySQL, ele somente inicia após o SQL está ok, container do servidor NODE.js<br/>
 em terceiro o proxy reverso, utilizo um Nginx para tal, somente inicia após o container do servidor NODE.js está operante;</br>
 
-**Iniciano tudo automaticamente em ambiente Linux:**<br/>
+**Iniciando tudo automaticamente em ambiente Linux:**<br/>
 no terminal ao realizar o git clone do projeto,
 navegue até /AppNode, onde está localizado o script de inicialização.<br/>
 <br/>
