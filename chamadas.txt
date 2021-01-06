@@ -1,0 +1,31 @@
+### Create Notes
+curl -X POST \
+  http://${NODE_API}/notes \
+  -H 'Accept: */*' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Content-Type: application/json' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -d '{
+  "NOME_DA_NOTA_ALTERAR": {}
+}'
+
+### Get Notes - Show ID, Name and Create Date
+curl -X GET \
+  http://${NODE_API}/notes \
+  -H 'Accept: */*' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache'
+
+### Delete Notes by ID
+curl -X DELETE \
+  http://${NODE_API}/notes/${NOTE_ID} \
+  -H 'Accept: */*' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'accept-encoding: gzip, deflate' \
+  -H 'cache-control: no-cache' \
+  -H 'content-length: '
