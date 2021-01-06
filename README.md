@@ -78,7 +78,7 @@ $ chmod +x ./startProject.sh
 após conceder permissão de execução apenas execute o script:<br/>
 
 ```
-$ ./startProject.sh<br/>
+$ ./startProject.sh
 ```
 será relizada toda verificação necessária, se já possui imagens ou buildś<br/>
 após as verificação ira iniciar todo ambiente em docker, ao fim disponibilizando para uso.<br/>
