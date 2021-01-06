@@ -40,49 +40,76 @@ consiste em uma API, onde utiliza um banco de dados Mysql para armazenamento de 
 e um proxy reverso para redirecionamento dos HTTP request.<br/>
 <br/>
 <br/>
-**o que foi feito para funcionamento do ambiente:**<br/>
+**O que foi feito para funcionamento do ambiente:**<br/>
 <br/>
 primeiramente a verificação do código server.js<br/>
 no mesmo foi verificado variáveis de ambiente para o NODE.js<br/>
-observando que não havia a chama do dotenv a mesma foi adicionada<br/>
-ao inicio do código para o funcionamento correto.<br/>
+observando que não havia a chamada do dotenv,
+foi adicionado ao inicio do código para o funcionamento correto.<br/>
 <br/>
-foi criado um diretório /app organizando os docs referente a aplicação,<br/>
-no diretório terá seu dockerfile contendo a instalação das dependencias para <br/>funcionamento do node.js e dotenv apartir do npm, expondo a porta 8080 para <br/>funcionamento da aplicação.<br/>
+**Diretórios/arquivos:<br />
+foi criado um diretório /app organizando os docs referente a aplicação/servidor NODE.js,<br/>
+no diretório terá seu dockerfile contendo a instalação das dependências para funcionamento do node.js<br />
+e dotenv a partir do npm, expondo a porta 8080 para <br/>funcionamento do servidor NODE.js.<br/>
 <br/>
 foi criado um diretório /mysql organizando os docs referente ao banco mysql<br/>
-contendo uma subpasta /db onde está o banco da aplicação e seu dockerfile<br/>
-no momento do build realizando a copia do banco para o entripoynt.d do mysql<br/>
+contendo uma subpasta /db onde está o banco da aplicação, seu dockerfile na raiz na mesma estrutura,<br/>
+no momento do build realizando a copia do banco para o entripoynt.d do mysql,<br/>
 para que todo o banco seja criado automaticamente deixando tudo mais prático.<br/>
 <br/>
 foi criado um diretorio /reverser organizando os docs referente ao proxy reverso<br/>
 nele temos o seu dockerfile fazendo o build, em seu build apenas faço a copia do do nginx.conf onde possui a config para o proxy reverso. <br/>
 
+**Sobre o Docker-compose.yaml:**
+nele terá todo código de deploy da aplicação,<br/>
+em primeiro faço que o container MySQL inicie, preparando o banco junto de suas variáveis;<br/>
+em segundo com uma dependecia do MySQL, ele somente inicia após o SQL está ok, container do servidor NODE.js<br/>
+em terceiro o proxy reverso, utilizo um Nginx para tal, somente inicia após o container do servidor NODE.js está operante;</br>
 <br/><br/>
-Iniciano tudo automaticamente em ambiente Linux:<br/>
+**Iniciano tudo automaticamente em ambiente Linux:**<br/>
 <br/>
-to terminal ao realizar o git clone do projeto,
-navegue até /AppNode<br/>
+no terminal ao realizar o git clone do projeto,
+navegue até /AppNode, onde está localizado o script de inicialização.<br/>
 <br/>
-ainda no terminal precisaremos dar permissão de execução ao shell script de inicialização;<br/>
-<br/>
-chmod +x ./startProject.sh<br/>
+ainda no terminal precisaremos dar permissão de execução ao shell-script de inicialização;<br/>
+```
+$ chmod +x ./startProject.sh<br/>
+```
 <br/>
 após conceder permissão de execução apenas execute o script:<br/>
-./startProject.sh<br/>
+```
+$ ./startProject.sh<br/>
+```
+será relizada toda verificação necessária, se já possui imagens ou buildś<br/>
+após as verificação ira iniciar todo ambiente em docker ao fim disponibilizando para uso.<br/>
+<br/><br/>
 
-será relizada toda verificação se já possui imagens ou buildś<br/>
-após as verificação ira iniciar todo ambiente em docker disponível para uso.<br/>
-<br/>
-para inciar o Ambiente em Linux/Windows/Mac:<br />
+##### INICIANDO MANUALMENTE 
+para inciar o Ambiente manualmente com ``` docker-compose up ``` em Linux/Windows/Mac:<br />
 recomendado remover qualquer versão das seguintes imagens em seu docker:<br/>
+```
 ngix , mysql:5.7, node:10
-evitando problemas de build diferente, execute:<br />
+
+-- Evitando qualquer conflito, para isso utilize:
 docker image rm nginx:latest mysql:5.7 node:10
+```
 <br />
-após iniciamos todo o build e deploy com:<br />
-docker-compose up<br />
+após a verificação e limpeza das imagens, iniciar todo o build e deploy com:<br />
+``` docker-compose up ```
 <br />
+<br />
+##### PROCESSO DE TESTE DA API <br/>
+** Teste automatizado: ** <br/>
+Precisamos realizar o mesmo procedimento de permissão de execução para o testeAPI.sh
+<br/>
+dentro do diretorio raiz do projeto: /AppNode, realize o seguinte:<br/>
+```
+$ chmod +x ./testeAPI.sh
+```<br/>
+Após basta chamar o Shell-Script:
+```
+$ ./testeAPI.sh
+```
 <br />
 <br />
 considerações finais:<br/>
