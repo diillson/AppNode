@@ -1,22 +1,26 @@
 ##### Este projeto consiste na seguinte estrutura:
 
 ```
-AppNode<br />
-├── app<br/>
-│   ├── Dockerfile<br/>
-│   ├── package.json<br/>
-│   └── server.js<br/>
-├── docker-compose.yml<br/>
-├── mysql<br/>
-│   ├── db<br/>
-│   │   └── database_schema.sql<br/>
-│   └── Dockerfile<br/>
-├── README.md<br/>
-├── reverse<br/>
-│   ├── Dockerfile<br/>
-│   ├── nginx.conf<br/>
-│   └── SSL<br/>
-└── startProject.sh**<br/><br/>
+AppNode
+├── app
+│   ├── Dockerfile
+│   ├── package.json
+│   └── server.js
+├── chamadas.txt
+├── docker-compose.yml
+├── mysql
+│   ├── db
+│   │   └── database_schema.sql
+│   └── Dockerfile
+├── README.md
+├── reverse
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   └── SSL
+├── startProject.sh
+└── testeAPI.sh
+
+5 directories, 12 files
 ```
 
 todo o ambiente foi projetado em Linux<br/>
@@ -32,7 +36,7 @@ Ansible (para chamada do ambiente na AWS)<br/>
 -<br/>
 **:::Sobre o projeto:::**<br/>
 <br/>
-consiste em uma API onde utiliza um banco de dados Mysql para armazenamento de dados,<br/>
+consiste em uma API, onde utiliza um banco de dados Mysql para armazenamento de dados,<br/>
 e um proxy reverso para redirecionamento dos HTTP request.<br/>
 <br/>
 <br/>
