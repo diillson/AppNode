@@ -27,6 +27,7 @@ todo o ambiente foi projetado em Linux<br/>
 porém como utilizaremos o Docker para deploy,<br/>
 toda estrutura funcionará perfeitamente no windows/Linux/mac;<br/>
 <br/>
+
 **Aplicações necessárias:**<br/>
 <br/>
 Docker<br/>
@@ -34,6 +35,7 @@ Docker-compose<br/>
 Ansible (para chamada do ambiente na AWS)<br/>
 <br/>
 -<br/>
+
 **:::Sobre o projeto:::**<br/>
 <br/>
 consiste em uma API, onde utiliza um banco de dados Mysql para armazenamento de dados,<br/>
@@ -47,10 +49,11 @@ no mesmo foi verificado variáveis de ambiente para o NODE.js<br/>
 observando que não havia a chamada do dotenv,
 foi adicionado ao inicio do código para o funcionamento correto.<br/>
 <br/>
-**Diretórios/arquivos:<br />
-foi criado um diretório /app organizando os docs referente a aplicação/servidor NODE.js,<br/>
-no diretório terá seu dockerfile contendo a instalação das dependências para funcionamento do node.js<br />
-e dotenv a partir do npm, expondo a porta 8080 para <br/>funcionamento do servidor NODE.js.<br/>
+
+**Diretórios/arquivos:**
+foi criado um diretório ** /app ** organizando os docs referente a aplicação/servidor NODE.js,<br/>
+no diretório terá seu dockerfile, server.js e package.json contendo a instalação das dependências para funcionamento do node.js<br />
+e dotenv a partir do npm, expondo a porta 8080 para funcionamento do servidor NODE.js.<br/>
 <br/>
 foi criado um diretório /mysql organizando os docs referente ao banco mysql<br/>
 contendo uma subpasta /db onde está o banco da aplicação, seu dockerfile na raiz na mesma estrutura,<br/>
@@ -66,6 +69,7 @@ em primeiro faço que o container MySQL inicie, preparando o banco junto de suas
 em segundo com uma dependecia do MySQL, ele somente inicia após o SQL está ok, container do servidor NODE.js<br/>
 em terceiro o proxy reverso, utilizo um Nginx para tal, somente inicia após o container do servidor NODE.js está operante;</br>
 <br/><br/>
+
 **Iniciano tudo automaticamente em ambiente Linux:**<br/>
 <br/>
 no terminal ao realizar o git clone do projeto,
@@ -84,7 +88,7 @@ após conceder permissão de execução apenas execute o script:<br/>
 $ ./startProject.sh<br/>
 ```
 será relizada toda verificação necessária, se já possui imagens ou buildś<br/>
-após as verificação ira iniciar todo ambiente em docker ao fim disponibilizando para uso.<br/>
+após as verificação ira iniciar todo ambiente em docker, ao fim disponibilizando para uso.<br/>
 <br/><br/>
 
 ##### INICIANDO MANUALMENTE 
@@ -105,8 +109,10 @@ docker-compose up
 ```
 <br />
 <br />
-##### PROCESSO DE TESTE DA API <br/>
-** Teste automatizado: ** <br/>
+
+##### PROCESSO DE TESTE DA API 
+
+**Teste automatizado:** 
 Precisamos realizar o mesmo procedimento de permissão de execução para o testeAPI.sh
 <br/>
 dentro do diretorio raiz do projeto: /AppNode, realize o seguinte:
