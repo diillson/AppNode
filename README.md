@@ -1,5 +1,6 @@
-Este projeto consiste na seguinte estrutura:
+##### Este projeto consiste na seguinte estrutura:
 
+```
 AppNode<br />
 ├── app<br/>
 │   ├── Dockerfile<br/>
@@ -15,26 +16,27 @@ AppNode<br />
 │   ├── Dockerfile<br/>
 │   ├── nginx.conf<br/>
 │   └── SSL<br/>
-└── startProject.sh<br/>
+└── startProject.sh**<br/><br/>
+```
 
 todo o ambiente foi projetado em Linux<br/>
 porém como utilizaremos o Docker para deploy,<br/>
 toda estrutura funcionará perfeitamente no windows/Linux/mac;<br/>
 <br/>
-Aplicações necessárias:<br/>
+**Aplicações necessárias:**<br/>
 <br/>
 Docker<br/>
 Docker-compose<br/>
 Ansible (para chamada do ambiente na AWS)<br/>
 <br/>
 -<br/>
-sobre o projeto:::<br/>
+**:::Sobre o projeto:::**<br/>
 <br/>
 consiste em uma API onde utiliza um banco de dados Mysql para armazenamento de dados,<br/>
 e um proxy reverso para redirecionamento dos HTTP request.<br/>
 <br/>
 <br/>
-o que foi feito para funcionamento do ambiente:<br/>
+**o que foi feito para funcionamento do ambiente:**<br/>
 <br/>
 primeiramente a verificação do código server.js<br/>
 no mesmo foi verificado variáveis de ambiente para o NODE.js<br/>
