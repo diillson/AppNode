@@ -72,11 +72,14 @@ no terminal ao realizar o git clone do projeto,
 navegue até /AppNode, onde está localizado o script de inicialização.<br/>
 <br/>
 ainda no terminal precisaremos dar permissão de execução ao shell-script de inicialização;<br/>
+
 ```
-$ chmod +x ./startProject.sh<br/>
+$ chmod +x ./startProject.sh
+
 ```
 <br/>
 após conceder permissão de execução apenas execute o script:<br/>
+
 ```
 $ ./startProject.sh<br/>
 ```
@@ -94,18 +97,24 @@ ngix , mysql:5.7, node:10
 docker image rm nginx:latest mysql:5.7 node:10
 ```
 <br />
-após a verificação e limpeza das imagens, iniciar todo o build e deploy com:<br />
-``` docker-compose up ```
+após a verificação e limpeza das imagens, iniciar todo o build e deploy com:
+
+```
+docker-compose up 
+
+```
 <br />
 <br />
 ##### PROCESSO DE TESTE DA API <br/>
 ** Teste automatizado: ** <br/>
 Precisamos realizar o mesmo procedimento de permissão de execução para o testeAPI.sh
 <br/>
-dentro do diretorio raiz do projeto: /AppNode, realize o seguinte:<br/>
+dentro do diretorio raiz do projeto: /AppNode, realize o seguinte:
+
 ```
 $ chmod +x ./testeAPI.sh
-```<br/>
+```
+
 Após basta chamar o Shell-Script:
 ```
 $ ./testeAPI.sh
