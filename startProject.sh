@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "Olá Iniciaremos o processo de build e deploy do devops-challenge"
+echo "-------------------------------------"
+echo "Removendo versão anteriores de ngix , mysql:5.7, node:10"
+sudo docker image rm nginx:latest mysql:5.7 node:10
+echo "-------------------------------------"
+echo "Removendo Configuração de build e deploy anterior"
+sudo docker image rm appnode_reverse appnode_devops appnode_mysql
+echo "-------------------------------------"
+echo "Iniciando novo ambiente"
+sudo docker-compose up "-d"
+echo "-------------------------------------"
+echo "Processo de Implantação terminado"
+echo "-------------------------------------"
+echo "APP OK"
+echo "-------------------------------------"
+echo "MYSQL OK"
+echo "-------------------------------------"
+echo "Proxy Reverse OK"
+echo "-------------------------------------"
+echo "Projeto criado para ambiente local, acesse a API por http://localhost"
+echo "-------------------------------------"
