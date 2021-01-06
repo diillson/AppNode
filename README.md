@@ -22,14 +22,12 @@ porém como é utilizado como base no Docker,
 toda sua estrutura funcionará perfeitamente no windows;
 
 Aplicações necessárias:
-
 Docker
 Docker-compose
 Ansible (para chamada do ambiente na AWS)
 
 -
 sobre o projeto:::
-
 consiste em uma API onde utiliza um banco de dados Mysql para armazenamento de dados,
 e um proxy reverso para redirecionamento dos HTTP request.
 
@@ -67,6 +65,13 @@ após conceder permissão de execução apenas execute o script
 
 será relizada toda verificação se já possui imagens ou buildś
 após as verificação ira iniciar todo ambiente em docker disponível para uso.
+
+Iniciando o Ambiente em Linux/Windows/Mac
+através do:
+docker-compose up
+
+remomendado remover qualquer verao de imagem em seu docker evitando problemas de build diferente dos seguintes:
+ngix , mysql:5.7, node:10
 
 considerações finais:
 Peço desculpas em não poder encaminhar o projeto com SSL,
