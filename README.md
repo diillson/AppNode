@@ -36,7 +36,7 @@ toda estrutura funcionará perfeitamente no windows/Linux/mac;<br/>
 <br/>
 Docker<br/>
 Docker-compose<br/>
-Openssl (para gerar o certificado proprietário)
+Openssl (para gerar o certificado proprietário)<br/>
 Ansible (para chamada do ambiente na AWS)<br/>
 
 **:::Sobre o projeto:::**<br/>
