@@ -155,9 +155,8 @@ Foi adicionado a seção SSL no arquivo de config do nginx.<br/><br/>
 
 
 
-considerações finais:<br/>
-Peço desculpas em não poder encaminhar o projeto com SSL,<br/>
-uma infra com terraform na AWS ou monitando o mesmo no zabbix os prometheus.<br/>
+Considerações finais:<br/>
+Peço desculpas em não encaminhar o projeto com uma infra com terraform na AWS ou monitando o mesmo no zabbix ou prometheus.<br/>
 estou trabalhando em alguns projetos fullpunk na empresa que ainda me encontro,<br/>
 como está bem acelerado as coias no inicio do ano por aqui, peço a consideração,<br/>
-porém em um momento oportuno que poder demostrar minha habilidade com tais skill <br/>faltante ficaria agradecido.<br/>
+porém em um momento oportuno que poder demostrar minha habilidade com tais skill faltante ficaria agradecido.<br/>
