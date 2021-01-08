@@ -17,10 +17,14 @@ AppNode
 │   ├── Dockerfile
 │   ├── nginx.conf
 │   └── SSL
+│       ├── cacert.pem
+│       ├── servidor.crt
+│       └── servidor.key
 ├── startProject.sh
 └── testeAPI.sh
 
-5 directories, 12 files
+5 directories, 15 files
+
 ```
 
 todo o ambiente foi projetado em Linux<br/>
@@ -32,6 +36,7 @@ toda estrutura funcionará perfeitamente no windows/Linux/mac;<br/>
 <br/>
 Docker<br/>
 Docker-compose<br/>
+Openssl (para gerar o certificado proprietário)
 Ansible (para chamada do ambiente na AWS)<br/>
 
 **:::Sobre o projeto:::**<br/>
@@ -56,7 +61,9 @@ no momento do build realizando a copia do banco para o entripoynt.d do mysql,<br
 para que todo o banco seja criado automaticamente deixando tudo mais prático.<br/>
 <br/>
 foi criado um diretorio /reverser organizando os docs referente ao proxy reverso<br/>
-nele temos o seu dockerfile fazendo o build, em seu build apenas faço a copia do do nginx.conf onde possui a config para o proxy reverso. <br/>
+e uma subpasta /SSL nela contém os certificados para funcionamento do SSL<br/>
+em o seu dockerfile os parametros fazendo o build e copiando os certificados,<br/>
+junto também a copia do nginx.conf onde possui a config para o proxy reverso e funcionamento do SSL. <br/>
 
 **Sobre o Docker-compose.yaml:**<br/>
 nele terá todo código de deploy da aplicação,<br/>
@@ -118,7 +125,36 @@ Após basta chamar o Shell-Script:
 $ ./testeAPI.sh
 ```
 <br />
-<br />
+
+#### ATUALIZAÇÃO: 08/01/2020 - 00:53
+
+**Referente ao SSL**
+SSL adicionado, https funcionando para o projeto. <br/>
+Projeto/API operando tanto na porta 80 quanto 443 <br/>
+
+1) Para implementação do SSL foi gerado um certificado proprietário assinado pela CApŕopria, <br/>
+utilizando o openssl com os seguintes comandos:
+```
+Gerar a chave privada com 4096 bits da CA:
+$ openssl genrsa -des3 -out cacert.key 4096
+
+Gerar o certificado auto-assinado da CA com validade de 10 anos:
+$ openssl req -new -x509 -days 3650 -key cacert.key -out cacert.pem 
+
+Criar a chave privada do servidor que será assinado pela CA:
+$ openssl genrsa -out servidor.key 4096
+
+Gerar a requisição de certificado do servidor que será assinado pela CA:
+$ openssl req -new -key servidor.key -out servidor.csr
+
+Assinar o certificado do servidor pela CA com validade de 10 anos:
+$ openssl x509 -req -in servidor.csr -out servidor.crt -sha1 -CA cacert.pem -CAkey cacert.key -CAcreateserial -days 3650
+
+```
+Foi adicionado a seção SSL no arquivo de config do nginx.<br/><br/>
+
+
+
 considerações finais:<br/>
 Peço desculpas em não poder encaminhar o projeto com SSL,<br/>
 uma infra com terraform na AWS ou monitando o mesmo no zabbix os prometheus.<br/>
