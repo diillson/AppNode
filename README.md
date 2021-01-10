@@ -151,12 +151,12 @@ $ openssl x509 -req -in servidor.csr -out servidor.crt -sha1 -CA cacert.pem -CAk
 ```
 Foi adicionado a seção SSL no arquivo de config do nginx.<br/><br/>
 
-**Att: rodando o projeto em Stack para cluster SWARM**
+**Att: rodando o projeto em Stack para cluster SWARM**<br/>
 Dentro do diretório principal basta chamar o seguinte:<br/>
 
 ```
 docker swarm init ( iniciará o cluster swarm )
-docker stack deploy -s docker-compose.yml DevOpsChallenge
+docker stack deploy -c docker-compose.yml DevOpsChallenge
 
 para verificar o cluster:
 docker stack ls <br/>
