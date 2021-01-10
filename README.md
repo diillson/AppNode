@@ -126,8 +126,6 @@ $ ./testeAPI.sh
 ```
 <br />
 
-#### ATUALIZAÇÃO: 08/01/2020 - 00:53
-
 **Referente ao SSL**
 SSL adicionado, https funcionando para o projeto. <br/>
 Projeto/API operando tanto na porta 80 quanto 443 <br/>
@@ -153,7 +151,20 @@ $ openssl x509 -req -in servidor.csr -out servidor.crt -sha1 -CA cacert.pem -CAk
 ```
 Foi adicionado a seção SSL no arquivo de config do nginx.<br/><br/>
 
+**Att: rodando o projeto em Stack para cluster SWARM**
+Dentro do diretório principal basta chamar o seguinte:<br/>
 
+```
+docker swarm init ( iniciará o cluster swarm )
+docker stack deploy -s docker-compose.yml DevOpsChallenge
+
+para verificar o cluster:
+docker stack ls <br/>
+verificar os serviços:
+docker service ls
+caso queira escalar a quantidade de serviços para que o swarm realize o balancemento de carga:
+docker service update "nome do serviço que deseja escalar" --replicas "quantidade" 
+```
 
 Considerações finais:<br/>
 Peço desculpas em não encaminhar o projeto com uma infra com terraform na AWS ou monitando o mesmo no zabbix ou prometheus.<br/>
