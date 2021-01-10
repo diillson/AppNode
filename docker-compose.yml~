@@ -1,9 +1,7 @@
 version: "3.7"
 services:
   devops:
-    container_name: NODE 
     hostname: AppNode
-    image: appnode_devops
     build: ./app 
     depends_on:
       - mysql
@@ -12,9 +10,7 @@ services:
       - "8080:8080"
 
   mysql:
-    container_name: MySql
     hostname: mysql
-    image: appnode_mysql
     build: ./mysql
     restart: always
     environment:
@@ -23,9 +19,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
 
   reverse:
-    container_name: Nginx
     hostname: reverse
-    image: appnode_reverse
     build: ./reverse
     restart: always
     depends_on:
