@@ -166,8 +166,3 @@ caso queira escalar a quantidade de serviços para que o swarm realize o balance
 docker service update "nome do serviço que deseja escalar" --replicas "quantidade" 
 ```
 
-Considerações finais:<br/>
-Peço desculpas em não encaminhar o projeto com uma infra com terraform na AWS ou monitando o mesmo no zabbix ou prometheus.<br/>
-estou trabalhando em alguns projetos fullpunk na empresa que ainda me encontro,<br/>
-como está bem acelerado as coias no inicio do ano por aqui, peço a consideração,<br/>
-porém em um momento oportuno que poder demostrar minha habilidade com tais skill faltante ficaria agradecido.<br/>
