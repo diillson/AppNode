@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "mysql": "^2.15.0",
+    "dotenv",
     "restify": "^7.0.0",
     "restify-errors": "^6.0.0"
   }
