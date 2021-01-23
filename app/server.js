@@ -1,7 +1,6 @@
 ﻿var restify = require('restify');
 var errors = require('restify-errors');
 var mysql = require('mysql');
-require('dotenv').config();
 
 var port = process.env.API_PORT;
 if (!port) {
