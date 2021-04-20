@@ -1,4 +1,4 @@
-##### Este projeto consiste na seguinte estrutura 090909090909090:
+##### Este projeto consiste na seguinte estrutura:
 
 ```
 AppNode
