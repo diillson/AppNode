@@ -1,4 +1,4 @@
-##### Este projeto consiste na seguinte AAAAAAAAAAAAestrutura:
+##### Este projeto consiste na seguinte estrutura:
 
 ```
 AppNode
