@@ -1,6 +1,6 @@
-### Create Notes
+### post notas
 curl -X POST \
-  http://${NODE_API}/notes \
+  http://${NODE_API}/notas \
   -H 'Accept: */*' \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \
@@ -11,18 +11,18 @@ curl -X POST \
   "NOME_DA_NOTA_ALTERAR": {}
 }'
 
-### Get Notes - Show ID, Name and Create Date
+### Get notas - Mostra ID, Nome e Data de criação
 curl -X GET \
-  http://${NODE_API}/notes \
+  http://${NODE_API}/notas \
   -H 'Accept: */*' \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \
   -H 'accept-encoding: gzip, deflate' \
   -H 'cache-control: no-cache'
 
-### Delete Notes by ID
+### Deleta notas por ID
 curl -X DELETE \
-  http://${NODE_API}/notes/${NOTE_ID} \
+  http://${NODE_API}/notas/${NOTE_ID} \
   -H 'Accept: */*' \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \

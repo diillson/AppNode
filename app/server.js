@@ -27,9 +27,12 @@ server.get('/notas', function (request, response, next) {
 });
 
 server.get('/', function tempo(request, response, next) {
-			const dynamicDate = new Date();
+			const dynamicDate = new Date();//(Date.UTC(2021, 05, 26, 3, 0, 0));
+			//const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+			//options.timeZone = 'GMT';
+			//options.timeZoneName = 'short';
 
-			response.json({date: dynamicDate.toGMTString(),
+			response.json({date: dynamicDate.toLocaleString('pt-BR'),//, options),
 			Projeto: "API de integração com Banco MySql"
 			});
 				
