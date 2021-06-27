@@ -7,7 +7,7 @@ echo "Criando Nota"
 echo "---------------------------"
 echo "---------------------------"
 curl -X POST \
-  http://${NODE_API}/notes \
+  http://${NODE_API}/notas \
   -H 'Accept: */*' \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \
@@ -23,7 +23,7 @@ echo "Buscando notas Cadastradas"
 echo "---------------------------"
 echo "---------------------------"
 curl -X GET \
-  http://${NODE_API}/notes \
+  http://${NODE_API}/notas \
   -H 'Accept: */*' \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \
@@ -35,7 +35,7 @@ echo "Deletando notas Cadastradas Pela Variavel NOTE_ID"
 echo "---------------------------"
 echo "---------------------------"
 curl -X DELETE \
-  http://${NODE_API}/notes/${NOTE_ID} \
+  http://${NODE_API}/notas/${NOTE_ID} \
   -H 'Accept: */*' \
   -H 'Cache-Control: no-cache' \
   -H 'Connection: keep-alive' \
